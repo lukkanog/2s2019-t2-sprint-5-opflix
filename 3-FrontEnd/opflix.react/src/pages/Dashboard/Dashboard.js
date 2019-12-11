@@ -2,28 +2,28 @@ import React, { Component } from "react";
 import Nav from "../../components/Nav/Nav";
 import Rodape from "../../components/Rodape/Rodape";
 import jsonwebtoken from "jsonwebtoken";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../assets/css/Dashboard.css";
 import setinha from "../../assets/img/arrow.png";
 
 
-export default class Dashboard extends Component{
-    constructor(){
+export default class Dashboard extends Component {
+    constructor() {
         super()
-        this.state ={
-            nomeAdm : ""
+        this.state = {
+            nomeAdm: ""
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         let token = localStorage.getItem("usuario-opflix");
         let user = jsonwebtoken.decode(token);
         let nome = user.nome;
-        this.setState({nomeAdm:nome});
+        this.setState({ nomeAdm: nome });
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="Dashboard">
                 <header>
                     <Nav />
@@ -36,36 +36,43 @@ export default class Dashboard extends Component{
                                 <li>
                                     <Link className="link_dashboard" to="/adm/lancamentos">
                                         Lançamentos
-                                        <img src={setinha} className="setinha"/>
+                                        <img src={setinha} className="setinha" />
                                     </Link>
                                 </li>
                                 <li>
                                     <Link className="link_dashboard" to="/adm/categorias">
                                         Categorias
-                                        <img src={setinha} className="setinha"/>
+                                        <img src={setinha} className="setinha" />
                                     </Link>
                                 </li>
                                 <li>
-                                <Link className="link_dashboard" to="/adm/plataformas">
-                                    Plataformas
-                                    <img src={setinha} className="setinha"/>
-                                </Link>
+                                    <Link className="link_dashboard" to="/adm/plataformas">
+                                        Plataformas
+                                    <img src={setinha} className="setinha" />
+                                    </Link>
                                 </li>
                             </ul>
                             <ul>
-                            <li>
+                                <li>
                                     <Link className="link_dashboard" to="/adm/lancamentos/cadastrar">
                                         Cadastrar lançamento
-                                        <img src={setinha} className="setinha"/>
+                                        <img src={setinha} className="setinha" />
                                     </Link>
                                 </li>
-     
+
                                 <li>
                                     <Link className="link_dashboard" to="/adm/cadastro">
                                         Cadastrar usuário
-                                        <img src={setinha} className="setinha"/>
+                                        <img src={setinha} className="setinha" />
                                     </Link>
-                            </li>
+                                </li>
+
+                                <li>
+                                    <Link className="link_dashboard" to="/lancamentos/mapa">
+                                        Ver Mapa de Lançamentos
+                                        <img src={setinha} className="setinha" />
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>

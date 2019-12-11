@@ -53,6 +53,21 @@ namespace Senai.OpFlix.WebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "ADMINISTRADOR")]
+        [HttpDelete("{titulo}")]
+        public IActionResult Excluir(string titulo)
+        {
+            try
+            {
+                LocalizacaoRepository.Excluir(titulo);
+                return Ok(new { mensagem = "Localização excluída com sucesso."});
+            }
+            catch (Exception e)
+            {
+                return BadRequest(new { mensagem = e.Message });
+            }
+        }
+
 
     }////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

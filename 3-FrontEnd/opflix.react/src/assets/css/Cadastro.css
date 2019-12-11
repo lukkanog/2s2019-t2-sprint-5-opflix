@@ -4,7 +4,7 @@
 
 .Cadastro form{
     margin: auto;
-    width: 40%;;
+    width: 50%;;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
@@ -12,13 +12,13 @@
 }
 
 .Cadastro input{
-    width : 100%;
+    width : 90%;
     margin:0.3em 0;
     padding: 0.3em 0.5em;
 }
 
 .submit_cadastro{
-    width:104%;
+    width:110%;
 }
 
 #texto_erro{

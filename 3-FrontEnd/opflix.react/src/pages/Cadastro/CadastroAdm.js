@@ -143,7 +143,7 @@ export default class CadastroAdm extends Component{
                                 <br/>
                                 <input onInput={this.atualizarEstadoConfirmaSenha} required type="password" minLength="6" maxLength="450"/>
                             </label>
-                            <input type="submit" value="Cadastrar" className="submit_cadastro link"/>
+                            <input type="submit" value="Cadastrar" className="submit_cadastro"/>
                         </form>
                     </div>
                 </main>

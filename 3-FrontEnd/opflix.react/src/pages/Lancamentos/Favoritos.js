@@ -40,8 +40,8 @@ export default class Favoritos extends Component {
 
     foiFavoritado = (id) => {
         let bool = false;
-        this.state.favoritos.map(element => {
-            if (element.idLancamento == id) {
+        this.state.favoritos.forEach(element => {
+            if (element.idLancamento === id) {
                 bool = true;
                 return bool;
             }
@@ -91,7 +91,7 @@ export default class Favoritos extends Component {
                                             <p className="caracteristicas_lancamento"><b>Tipo: </b>{element.idTipoLancamentoNavigation.nome}</p>
                                             <p className="caracteristicas_lancamento"><b>Gênero: </b>{element.idCategoriaNavigation.nome}</p>
                                             <p className="caracteristicas_lancamento"><b>Plataforma: </b>{element.idPlataformaNavigation.nome}</p>
-                                            {element.idTipoLancamentoNavigation.nome == "Serie" ?
+                                            {element.idTipoLancamentoNavigation.nome === "Serie" ?
                                                 <p className="caracteristicas_lancamento"><b>Duração: </b>{element.duracao + " minutos por episódio"}</p>
                                                 :
                                                 <p className="caracteristicas_lancamento"><b>Duração: </b>{element.duracao + " minutos"}</p>
@@ -107,7 +107,7 @@ export default class Favoritos extends Component {
                                     <div className="data_e_btn">
                                         <p className="data_lancamento">{this.formatarData(element)}</p>
                                         <button className="btn_desfavoritar" onClick={() => this.desfavoritar(element.idLancamento)}>
-                                            <img src={estrelinha} className="estrelinha_btn_favoritar" />
+                                            <img src={estrelinha} className="estrelinha_btn_favoritar" alt="desfavoritar"/>
                                             <p className="texto_btn_favoritar">Desfavoritar</p>
                                         </button>
                                     </div>

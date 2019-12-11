@@ -128,7 +128,7 @@ export default class Lancamentos extends Component {
 
     foiFavoritado = (id) => {
         let bool = false;
-        this.state.favoritos.map(element => {
+        this.state.favoritos.forEach(element => {
             if (element.idLancamento === id) {
                 bool = true;
                 return bool;
@@ -250,7 +250,7 @@ export default class Lancamentos extends Component {
 
         try {
 
-            if (this.state.idCategoria != "" && this.state.idCategoria != 0) {
+            if (this.state.idCategoria !== "" && this.state.idCategoria !== 0) {
 
                 fetch("http://192.168.4.16:5000/api/lancamentos/filtrar/categoria/" + this.state.idCategoria, {
                     headers: {
@@ -281,7 +281,7 @@ export default class Lancamentos extends Component {
 
         try {
 
-            if (this.state.idPlataforma != "" && this.state.idPlataforma != 0) {
+            if (this.state.idPlataforma !== "" && this.state.idPlataforma !== 0) {
 
                 fetch("http://192.168.4.16:5000/api/lancamentos/filtrar/plataforma/" + this.state.idPlataforma, {
                     headers: {
@@ -369,7 +369,7 @@ export default class Lancamentos extends Component {
                         <button className="limpar_filtros" onClick={this.atualizarPagina}>Limpar Filtros</button>
 
 
-                        {this.state.naoFoiEncontrado == false ? null : 
+                        {this.state.naoFoiEncontrado === false ? null : 
                         <p className="alert">
                             Resultado não encontrado :/
                         </p>
@@ -401,12 +401,12 @@ export default class Lancamentos extends Component {
 
                                         {this.foiFavoritado(element.idLancamento) !== true ?
                                             <button className="btn_favoritar" id={"favoritar_" + element.idLancamento} onClick={() => this.favoritar(element.idLancamento)}>
-                                                <img src={estrelinha} className="estrelinha_btn_favoritar" alt="" />
+                                                <img alt="favoritar" src={estrelinha} className="estrelinha_btn_favoritar"/>
                                                 <p className="texto_btn_favoritar">Adicionar aos favoritos</p>
                                             </button>
                                             :
                                             <button className="btn_desfavoritar" onClick={() => this.desfavoritar(element.idLancamento)}>
-                                                <img src={estrelinha} className="estrelinha_btn_favoritar" />
+                                                <img alt="Desfavoritar" src={estrelinha} className="estrelinha_btn_favoritar" />
                                                 <p className="texto_btn_favoritar">Favorito</p>
                                             </button>
                                         }

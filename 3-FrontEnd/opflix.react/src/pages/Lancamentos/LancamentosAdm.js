@@ -18,7 +18,7 @@ export default class LancamentosAdm extends Component{
         this.atualizarPagina();
     }
 
-    atualizarPagina = () =>{
+    atualizarPagina(){
         let url = "http://192.168.4.16:5000/api/lancamentos";
         console.log("teste");
         fetch(url)
@@ -45,20 +45,36 @@ export default class LancamentosAdm extends Component{
         return( dia + "/" + mes + "/" + ano);
     }
 
-    excluirLancamento = (id) => {
+    excluirLancamento = (lancamento) => {
 
-        let token = localStorage.getItem("usuario-opflix")
+        let token = localStorage.getItem("usuario-opflix");
 
-        fetch("http://192.168.4.16:5000/api/lancamentos/" + id, {
+        fetch("http://192.168.4.16:5000/api/lancamentos/" + lancamento.idLancamento, {
             method: "DELETE",
             headers: {
                 "Authorization": "Bearer " + token
             }
         })
-            .then(this.atualizarLista(id))
+            .then(this.atualizarLista(lancamento.idLancamento))
             .catch(error => console.log(error));
 
             // window.location.reload();
+        this.excluirLocalizacao(lancamento);
+        
+        
+    }
+
+    excluirLocalizacao = (lancamento) =>{
+        let token = localStorage.getItem("usuario-opflix");
+
+
+        fetch("http://192.168.4.16:5000/api/localizacoes/" + lancamento.titulo, {
+            method: "DELETE",
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        })
+        .catch(error => console.log(error));
     }
 
     editarLancamento = (id) =>{
@@ -108,7 +124,7 @@ export default class LancamentosAdm extends Component{
                                             </td>
 
                                             <td>
-                                                <img id={"delete_" + element.idLancamento} onClick={() => this.excluirLancamento(element.idLancamento)} src={iconeExcluir} alt="Excluir" className="icone_tabela" />
+                                                <img id={"delete_" + element.idLancamento} onClick={() => this.excluirLancamento(element)} src={iconeExcluir} alt="Excluir" className="icone_tabela" />
                                             </td>
                                         </tr>
                                     )

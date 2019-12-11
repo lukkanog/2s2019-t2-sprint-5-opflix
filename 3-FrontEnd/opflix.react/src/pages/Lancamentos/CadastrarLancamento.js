@@ -4,7 +4,6 @@ import "../../assets/css/CadastrarLancamento.css";
 import Axios from "axios";
 import { Redirect, } from "react-router-dom";
 import Rodape from "../../components/Rodape/Rodape";
-import locationIcon from "../../assets/img/location-icon.png"
 
 
 
@@ -192,7 +191,7 @@ class CadastrarLancamento extends Component {
                                 <label className="grupo_input">
                                     Título
                                 <br />
-                                    <input onInput={this.atualizarEstadoTitulo} className="" type="text" minLength="1" maxLength="100" required className="input_lancamento" />
+                                    <input onInput={this.atualizarEstadoTitulo} type="text" minLength="1" maxLength="100" required className="input_lancamento" />
                                 </label>
 
                                 <label className="grupo_input">

@@ -196,6 +196,7 @@ textarea:focus, input:focus, select:focus{
 #link_banner:hover{
   /* filter: contrast(30%); */
   color : #F2EB12;
+  font-size: 3.12em
 }
 
 /***** CONTEUDO PRINCIPAL *********/

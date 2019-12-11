@@ -175,7 +175,7 @@ export default class EditarLancamento extends Component {
                                 <label className="grupo_input">
                                     Título
                                 <br />
-                                    <input defaultValue={this.state.titulo} onInput={this.atualizarEstadoTitulo} className="" type="text" minLength="1" maxLength="100" required className="input_lancamento" />
+                                    <input defaultValue={this.state.titulo} onInput={this.atualizarEstadoTitulo} type="text" minLength="1" maxLength="100" required className="input_lancamento" />
                                 </label>
 
                                 <label className="grupo_input">

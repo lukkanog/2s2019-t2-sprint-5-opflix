@@ -33,7 +33,13 @@ namespace Senai.OpFlix.WebApi.Repositories
 
         public void Excluir(string titulo)
         {
-           
+            try
+            {
+                _localizacoes.FindOneAndDelete(x => x.Lancamento.Titulo == titulo);
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         public List<Localizacoes> Listar()

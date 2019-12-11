@@ -48,39 +48,54 @@ export default class Login extends Component {
 
         let url = "http://192.168.4.16:5000/api/login";
         
-        // Axios.post(url, {
-        //     email: this.state.email,
-        //     senha: this.state.senha,
-        // })
-        //     .then(response => {
-        //         console.log(response);
-        //         if (response.status === 200) {
-        //             localStorage.setItem("usuario-opflix", response.data.token);
-
-        //             let token = localStorage.getItem("usuario-opflix");
-        //             if (jsonwebtoken.decode(token).permissao === "ADMINISTRADOR") {
-        //                 this.props.history.push("/adm/")
-        //             } else {
-        //                 this.props.history.push("/");
-        //             }
-        //         }
-        //     })
-        //     .catch(error => () => {
-        //         console.log(error);
-        //     })
-
-        fetch(url, {
-            body: JSON.stringify({
-                email: this.state.email,
-                senha: this.state.senha,
-            }),
-            header:{
-                "Content-type" : "application/json",
-            }
+        Axios.post(url, {
+            email: this.state.email,
+            senha: this.state.senha,
         })
-        .then(resposta => resposta.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error))
+            .then(response => {
+                console.log(response);
+                if (response.status === 200) {
+                    localStorage.setItem("usuario-opflix", response.data.token);
+
+                    let token = localStorage.getItem("usuario-opflix");
+                    if (jsonwebtoken.decode(token).permissao === "ADMINISTRADOR") {
+                        this.props.history.push("/adm/")
+                    } else {
+                        this.props.history.push("/");
+                    }
+                }else{
+                    console.log(response.data.mensagem);
+                }
+            })
+            .catch(error => () => {
+                console.log(error);
+            })
+
+        // fetch(url, {
+        //     method: "POST",
+        //     body: JSON.stringify({
+        //         email: this.state.email,
+        //         senha: this.state.senha,
+        //     }),
+        //     headers:{
+        //         "Content-type" : "application/json",
+        //     }
+        // })
+        // .then(response => {
+        //     response.json();
+        //     if (response.status == 200) {
+        //         localStorage.setItem("usuario-opflix", response.data.token);
+
+        //         let token = localStorage.getItem("usuario-opflix");
+        //         if (jsonwebtoken.decode(token).permissao === "ADMINISTRADOR") {
+        //             this.props.history.push("/adm/")
+        //         } else {
+        //             this.props.history.push("/");
+        //         }
+        //     }
+        // })
+        // .then(data => console.log(data))
+        // .catch(error => console.log(error))
     }
 
 
