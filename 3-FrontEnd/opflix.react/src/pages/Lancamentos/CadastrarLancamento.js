@@ -175,7 +175,7 @@ class CadastrarLancamento extends Component {
     render() {
         if (this.state.jaFoiCadastrado === true) {
             return (
-                <Redirect to={{ pathname: "/adm/lancamentos" }} />
+                <Redirect to={{ pathname: "/adm/" }} />
             )
         } else {
             return (
