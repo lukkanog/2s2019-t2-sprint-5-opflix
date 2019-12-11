@@ -1,0 +1,44 @@
+*{
+    margin : 0;
+    padding : 0;
+    font-family: "Century Gothic"
+  }
+  
+.Mapa h2{
+    margin-top: 2em;
+}
+
+
+.Mapa main{
+    height : 115vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.border{
+    width : 75%;
+    border: 8px solid #a60313;
+    border-radius: 10px;
+}
+
+.pin-marker{
+    height : "10%";
+    background-color: #fff;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items : center;
+}
+
+.pin-icon{
+    height : 3em;
+    background-color: "#fff";
+
+}
+
+.titulo-marker{
+    color : #fff
+}
+

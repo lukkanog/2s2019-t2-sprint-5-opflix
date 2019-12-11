@@ -1,0 +1,74 @@
+*{
+    margin : 0;
+    padding: 0;
+}
+
+main{
+    padding-top: 5.5em;
+    min-height: 90vh;
+}
+
+.CadastrarLancamento h2,.EditarLancamento h2{
+    text-align: center;
+    padding: 2em 0;
+    margin: auto;
+}
+
+#form_lancamento{
+    width:50%;
+    margin: auto;
+
+    display:flex;
+    flex-flow:column;
+}
+
+.grupo_input{
+   padding:0.5em 0;
+}
+
+.input_lancamento{
+    width:100%;
+    padding: 0.2em;
+}
+
+
+#textArea_sinopse{
+    min-height: 5em;
+    max-height: 15em;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+#btn_submit_lancamento{
+    background-color: #A60313;
+    color: #FFFB7A;
+    padding: 0.5em;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#box_location_input{
+    background-color: #fffb7a6c;
+    margin: 3em 0;
+    padding : 2em;
+    display: flex;
+    justify-content: "space-between";
+}
+#box_location_input div{
+    display: flex;
+    width : 50%;
+    flex-flow : column;
+}
+
+.input_location{
+    width : 100%
+}
+
+.grupo_input_location{
+    padding : 0.5em 0;
+    font-size: 0.8em;
+}
+
+#location-icon-input{
+    height: 8em;
+}

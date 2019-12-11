@@ -1,0 +1,184 @@
+ *{
+    padding:0;
+    margin: 0;
+} 
+
+.Lancamentos main{
+    padding-top: 5.5em;
+}
+
+.Lancamentos h2{
+    margin:2em 0;
+    text-align: center;
+}
+
+.form-filtro{
+    width : 45%;
+    background-color: #fffb7a7e;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: #A60313 -3px 3px 7px;
+}
+
+.flex-forms{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-form-titulo{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.flex-form-titulo div{
+    display: flex;
+    align-items:  center;
+    padding: 0.5em;
+    font-weight: 800;
+}
+
+.form-filtro input{
+    width: 85%;
+    padding: 0.3em;
+}
+
+.titulo-form{
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+#submit-titulo{
+    width: 88%;
+    padding: 0.5em 0.2em;
+    background-color: #A60313;
+    color: #FFFB7A;
+    border: 1px solid #a60313;
+    border-radius: 0 0 5px 5px;
+}
+
+.form-filtro img{
+    height: 1.2em;
+    margin-right: 0.3em;
+}
+
+.flex-selects{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select{
+    width : 85%;
+}
+
+.submit-select{
+    width: 3em;
+    background-color: #A60313;
+    color: #FFFB7A;
+    border: 1px solid #a60313;
+    border-radius: 0 0 5px 5px;
+}
+
+.alert{
+    color: #a60313;
+    font-size: 2.5em;
+    text-align: center;
+    padding:2em 0;
+}
+.grupo-select{
+    display: flex;
+    flex-flow : column;
+    width : 40%;
+
+}
+
+.limpar_filtros{
+    padding: 1em;
+    background-color: #FFFB7A;
+    color: #000;
+    /* border: 1px solid #a60313; */
+    border-radius:5px;
+    font-weight: 600;
+    /* width: 100%; */
+    margin: 1em auto
+}
+
+.LancamentosAdm h2{
+    text-align:center;
+    padding: 2em 0;
+}
+
+.LancamentosAdm content{
+    min-height : 100%;
+    max-height: 500vh;
+    display : flex;
+    flex-flow : column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LancamentosAdm footer{
+    margin-top: 4em;
+}
+
+.smaller{
+    width: 20%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.LancamentosAdm table{
+    width: 90%;
+    margin : auto;
+    box-shadow: 1px 2px 5px #00000041;
+    background-color: #e7dfe0;
+}
+
+.LancamentosAdm table thead{
+    background-color: #A60313;
+    color: #fff;
+}
+
+.LancamentosAdm table td,th{
+    padding: 0.25em 0.75em;
+    text-align: center;
+}
+
+.LancamentosAdm table td{
+    background-color: #fff;
+}
+
+.LancamentosAdm table tr{
+    border:1px solid #000;
+}
+
+#btn_link_cadastrarLancamento{
+    /* width: 200%; */
+    background-color: #A60313;
+    padding: 0.5em;
+    position: relative;
+    left: 55vh;
+    /* right: 50vh; */
+    top: 2em;
+    font-size: 1.1em;
+}
+
+.icone_tabela{
+    height: 2em;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+}
+
+.icone_tabela:hover{
+    /* height: 2.1em; */
+    cursor: pointer;
+    filter:  contrast(0%);
+    -webkit-filter:  contrast(0%);
+    /* display: none; */
+}
+

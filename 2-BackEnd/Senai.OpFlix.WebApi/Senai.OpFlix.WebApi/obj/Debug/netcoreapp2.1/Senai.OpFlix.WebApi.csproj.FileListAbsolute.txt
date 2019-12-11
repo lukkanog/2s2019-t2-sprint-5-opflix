@@ -1,0 +1,14 @@
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\bin\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.deps.json
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\bin\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.runtimeconfig.json
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\bin\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.runtimeconfig.dev.json
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\bin\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.dll
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\obj\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.csprojAssemblyReference.cache
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\obj\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\obj\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.RazorAssemblyInfo.cache
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\obj\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.RazorAssemblyInfo.cs
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\obj\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.AssemblyInfoInputs.cache
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\obj\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.AssemblyInfo.cs
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\obj\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\bin\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.pdb
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\obj\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.dll
+C:\Users\46735197879\Desktop\lucas_2semestre\2s2019-t2-sprint-2-opflix\Senai.OpFlix.WebApi\Senai.OpFlix.WebApi\obj\Debug\netcoreapp2.1\Senai.OpFlix.WebApi.pdb

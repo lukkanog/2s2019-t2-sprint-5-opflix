@@ -1,0 +1,41 @@
+.Login main{
+    padding-top: 5.5em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+h2{
+    text-align: center;
+}
+
+#form_login{
+    width: 40%;
+    height: 20vh;
+    margin:auto;
+    display: flex;
+    flex-flow:column;
+    justify-content: space-around;
+}
+
+.input_login{
+    width:100%;
+    min-height: 2em;
+    padding: 0.1em 0.5em;
+    /* margin:0.5em 0 */
+}
+
+
+#submit_login{
+    background-color: #A60313;
+    color: #FFFB7A;
+    padding: 0.5em;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 104%
+}
+
+.link_toblack{
+    text-decoration: none;
+    color:#A60313;
+}

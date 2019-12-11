@@ -1,0 +1,27 @@
+.Cadastro h2{
+    padding:2em 0;
+}
+
+.Cadastro form{
+    margin: auto;
+    width: 40%;;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    height: 40vh;
+}
+
+.Cadastro input{
+    width : 100%;
+    margin:0.3em 0;
+    padding: 0.3em 0.5em;
+}
+
+.submit_cadastro{
+    width:104%;
+}
+
+#texto_erro{
+    color:red;
+    font-weight: bold;
+}
