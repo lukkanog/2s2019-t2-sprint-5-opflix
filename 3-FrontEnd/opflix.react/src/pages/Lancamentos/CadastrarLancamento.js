@@ -204,7 +204,7 @@ class CadastrarLancamento extends Component {
                                     Tipo
                                 <br />
                                     <select onChange={this.atualizarEstadoTipo} required className="input_lancamento select_lancamento">
-                                        <option disabled selected>Selecione</option>
+                                        <option disabled >Selecione</option>
                                         {this.state.tipos.map(element => {
                                             return (
                                                 <option value={element.idTipoLancamento} key={element.idTipoLancamento}>{element.nome}</option>

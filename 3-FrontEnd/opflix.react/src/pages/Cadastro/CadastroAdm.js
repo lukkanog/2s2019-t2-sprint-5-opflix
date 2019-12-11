@@ -119,8 +119,8 @@ export default class CadastroAdm extends Component{
                             <label>
                                 Permissão
                                 <br/>
-                                <select onChange={this.atualizarEstadoPermissao}>
-                                    <option selected disabled>Selecione...</option>
+                                <select onChange={this.atualizarEstadoPermissao} value={this.state.idTipousuario}>
+                                    <option value={0} disabled>Selecione...</option>
                                     {this.state.tipos.map(element =>{
                                         return(
                                             <option value={element.idTipoUsuario} key={element.idTipoLancamento}>{element.nome}</option>
