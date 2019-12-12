@@ -10,6 +10,7 @@ import mainScreen from "./pages/Main";
 import favoritosScreen from "./pages/Favoritos";
 import lancamentoScreen from "./pages/Lancamento";
 import cadastroScreen from "./pages/Cadastro";
+import filtrarScreen from "./pages/Filtrar";
 
 import dashboardScreen from "./pages/administrador/Dashboard";
 import categoriasScreen from "./pages/administrador/Categorias";
@@ -21,6 +22,7 @@ import cadastroUsuarioAdmScreen from "./pages/administrador/CadastroUsuario";
 
 import iconeHome from "./components/IconeHome";
 import iconeFavoritos from "./components/IconeFavoritos";
+import iconeProcurar from "./components/IconeProcurar";
 import IconeAdmin from "./components/IconeAdmin";
 import iconeCategorias from "./components/IconeCategorias";
 import iconePlataformas from "./components/IconePlataformas";
@@ -80,6 +82,13 @@ const DrawerNavigator = createDrawerNavigator(
             navigationOptions: {
                 drawerLabel: "Meus favoritos",
                 drawerIcon: iconeFavoritos,
+            }
+        },
+        Filtro : {
+            screen : filtrarScreen,
+            navigationOptions: {
+                drawerLabel: "Procurar e filtrar",
+                drawerIcon: iconeProcurar,
             }
         }
 

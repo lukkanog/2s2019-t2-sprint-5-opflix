@@ -30,7 +30,7 @@ class SplashScreen extends Component {
         // Start counting when the page is loaded
         this.timeoutHandle = setTimeout(() => {
             this._redirecionar()
-        }, 2500);
+        }, 1500);
     }
 
     componentWillUnmount() {
