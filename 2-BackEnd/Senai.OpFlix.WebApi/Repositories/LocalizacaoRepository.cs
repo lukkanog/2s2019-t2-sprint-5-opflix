@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using Senai.OpFlix.WebApi.Domains;
 using Senai.OpFlix.WebApi.Interfaces;
 using System;
@@ -20,9 +21,30 @@ namespace Senai.OpFlix.WebApi.Repositories
             _localizacoes = database.GetCollection<Localizacoes>("locais");
         }
 
-        public Localizacoes BuscarPorId(int id)
+        public void Atualizar(Localizacoes localizacaoASerAtualizada, Localizacoes localizacaoPassada)
         {
-            throw new NotImplementedException();
+            var updateDefinition = Builders<Localizacoes>.Update
+                .Set(x => x.Lancamento.Titulo, localizacaoPassada.Lancamento.Titulo)
+                .Set(x => x.Lancamento.DataLancamento, localizacaoPassada.Lancamento.DataLancamento)
+                .Set(x => x.Latitude, localizacaoPassada.Latitude)
+                .Set(x => x.Longitude, localizacaoPassada.Longitude);
+
+            _localizacoes.UpdateOne(x => x.Id == localizacaoASerAtualizada.Id,  updateDefinition);
+        }
+
+        public Localizacoes BuscarPorTitulo(string titulo)
+        {
+            var location = _localizacoes.Find(x => x.Lancamento.Titulo == titulo).ToList().First();
+            
+
+            if (location == null)
+            {
+                return null;
+            }
+            else
+            {
+                return location;
+            }
         }
 
         public void Cadastrar(Localizacoes localizacoes)

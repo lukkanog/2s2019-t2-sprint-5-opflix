@@ -50,11 +50,6 @@ namespace Senai.OpFlix.WebApi.Controllers
             try
             {
 
-                //if (location != null)
-                //{
-                //    location.TituloLancamento = lancamento.Titulo;
-                //    LocalizacaoRepository.Cadastrar(location);
-                //}
                 LancamentoRepository.Cadastrar(lancamento);
                 return Ok(new { Mensagem = "Lançamento cadastrado com sucesso" });
             }

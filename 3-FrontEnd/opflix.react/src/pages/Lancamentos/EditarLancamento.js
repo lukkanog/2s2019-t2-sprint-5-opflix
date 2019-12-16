@@ -24,10 +24,24 @@ export default class EditarLancamento extends Component {
             duracao: "",
             sinopse: "",
             dataLancamento: "",
+
+            latitude: "",
+            longitude: "",
+
+            localizacao: {},
+            // naoTemLocalizacao: true,
         }
     }
 
     componentDidMount() {
+        this.carregarLancamento();
+        this.carregarCategorias();
+        this.carregarPlataformas();
+        this.carregarTipos();
+    }
+
+
+    carregarLancamento = () => {
         let token = localStorage.getItem("usuario-opflix");
         try {
             let idPassado = this.props.location.state.idLancamento;
@@ -53,41 +67,81 @@ export default class EditarLancamento extends Component {
                     })
                 })
                 .then(console.log(this.state))
+                .then(() => this.carregarLocalizacao(this.state.titulo))
                 .catch(error => console.log(error))
 
-            let urlCategorias = "http://192.168.4.16:5000/api/categorias";
-            let urlTipos = "http://192.168.4.16:5000/api/tiposlancamento";
-            let urlPlataformas = "http://192.168.4.16:5000/api/plataformas";
 
-            fetch(urlTipos, {
-                headers: {
-                    "Authorization": "Bearer " + token
-                }
-            })
-                .then(response => response.json())
-                .then(data => this.setState({ tipos: data }))
-                .catch(error => console.log(error))
 
-            fetch(urlCategorias, {
-                headers: {
-                    "Authorization": "Bearer " + token
-                }
-            })
-                .then(response => response.json())
-                .then(data => this.setState({ categorias: data }))
-                .catch(error => console.log(error))
-
-            fetch(urlPlataformas, {
-                headers: {
-                    "Authorization": "Bearer " + token
-                }
-            })
-                .then(response => response.json())
-                .then(data => this.setState({ plataformas: data }))
-                .catch(error => console.log(error))
         } catch (error) {
-            this.setState({redirecionar : true})
+            this.setState({ redirecionar: true })
         }
+    }
+
+    carregarLocalizacao = (titulo) => {
+        console.log("location")
+        let token = localStorage.getItem("usuario-opflix");
+
+        try {
+            fetch("http://192.168.4.16:5000/api/localizacoes/" + titulo, {
+                headers: {
+                    "Authorization": "Bearer " + token,
+                }
+            })
+                .then(resposta => resposta.json())
+                .then(data => {
+                    this.setState({ localizacao: data });
+                    this.setState({ latitude: data.latitude });
+                    this.setState({ longitude: data.longitude });
+                })
+                .catch(error => console.log(error));
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+
+
+
+    carregarTipos = () => {
+        let token = localStorage.getItem("usuario-opflix");
+        let urlTipos = "http://192.168.4.16:5000/api/tiposlancamento";
+        fetch(urlTipos, {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        })
+            .then(response => response.json())
+            .then(data => this.setState({ tipos: data }))
+            .catch(error => console.log(error))
+    }
+
+    carregarCategorias = () => {
+        let token = localStorage.getItem("usuario-opflix");
+        let urlCategorias = "http://192.168.4.16:5000/api/categorias";
+
+        fetch(urlCategorias, {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        })
+            .then(response => response.json())
+            .then(data => this.setState({ categorias: data }))
+            .catch(error => console.log(error))
+
+    }
+
+    carregarPlataformas = () => {
+        let token = localStorage.getItem("usuario-opflix");
+        let urlPlataformas = "http://192.168.4.16:5000/api/plataformas";
+        fetch(urlPlataformas, {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        })
+            .then(response => response.json())
+            .then(data => this.setState({ plataformas: data }))
+            .catch(error => console.log(error))
+
     }
 
     atualizarEstadoTitulo = (event) => {
@@ -124,7 +178,16 @@ export default class EditarLancamento extends Component {
     atualizarEstadoSinopse = (event) => {
         event.preventDefault();
         this.setState({ sinopse: event.target.value });
-        console.log(this.state)
+    }
+
+    atualizarEstadoLatitude = (event) => {
+        event.preventDefault();
+        this.setState({ latitude: event.target.value });
+    }
+
+    atualizarEstadoLongitude = (event) => {
+        event.preventDefault();
+        this.setState({ longitude: event.target.value })
     }
 
     editarLancamento = (event) => {
@@ -150,8 +213,40 @@ export default class EditarLancamento extends Component {
                 duracao: this.state.duracao,
             })
         })
-            .then(this.setState({ redirecionar: true }))
+            // .then(this.setState({ redirecionar: true }))
             .catch(error => console.log(error))
+
+
+
+
+        var parsedLat = parseFloat(this.state.latitude);
+        var parsedLng = parseFloat(this.state.longitude);
+
+        try {
+            if (this.state.latitude !== "" && this.state.longitude !== "" && this.state.latitude !== null && this.state.longitude !== null && !isNaN(parsedLat) && !isNaN(parsedLng)) {
+                fetch("http://192.168.4.16:5000/api/localizacoes/" + this.state.localizacao.lancamento.titulo, {
+                    method: "PUT",
+                    headers: {
+                        "Authorization": "Bearer " + token,
+                        "Content-type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        latitude: this.state.latitude,
+                        longitude: this.state.longitude,
+                        lancamento: {
+                            titulo: this.state.titulo,
+                            dataLancamento: this.state.dataLancamento,
+                        }
+                    })
+                })
+                    .then(resposta => resposta.json())
+                    .then(data => console.log(data))
+                    .catch(error => console.log(error))
+            }//ifff
+
+        } catch (error) {
+            alert(error)
+        }
     }
 
 
@@ -181,7 +276,7 @@ export default class EditarLancamento extends Component {
                                 <label className="grupo_input">
                                     Data de lançamento
                                 <br />
-                                    <input type="date" onChange={this.atualizarEstadoData} required className="input_lancamento" />
+                                    <input type="date" onChange={this.atualizarEstadoData} className="input_lancamento" />
                                 </label>
 
                                 <label className="grupo_input">
@@ -234,6 +329,40 @@ export default class EditarLancamento extends Component {
                                 <br />
                                     <textarea onInput={this.atualizarEstadoSinopse} defaultValue={this.state.sinopse} minLength="10" maxLength="800" id="textArea_sinopse" required className="input_lancamento" placeholder="Escreva aqui a sinopse" />
                                 </label>
+
+                                {this.state.localizacao.latitude === undefined || this.state.localizacao.longitude === undefined ? null :
+                                    <div id="box_location_input">
+                                        <div>
+
+                                            <p>Localização </p>
+
+                                            <div>
+
+                                                <label className="grupo_input_location">
+                                                    Latitude
+                                    <br />
+                                                    <input
+                                                        className="input_location"
+                                                        onInput={this.atualizarEstadoLatitude}
+                                                        value={this.state.latitude}
+                                                    />
+                                                </label>
+
+
+                                                <label className="grupo_input_location">
+                                                    Longitude
+                                    <br />
+                                                    <input
+                                                        className="input_location"
+                                                        onInput={this.atualizarEstadoLongitude}
+                                                        value={this.state.longitude}
+                                                    />
+                                                </label>
+                                            </div>
+                                        </div>
+                                        {/* <img src={locationIcon} alt="Ícone de localização" id="location-icon-input"/> */}
+                                    </div>
+                                }
 
                                 <input type="submit" value="Salvar alterações" id="btn_submit_lancamento" />
 

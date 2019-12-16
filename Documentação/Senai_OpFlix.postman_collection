@@ -474,6 +474,82 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "Localizacoes.BuscarPorTitulo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://192.168.4.16:5000/api/localizacoes/Lorem Ipsum 3 /",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"4",
+										"16"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"localizacoes",
+										"Lorem Ipsum 3 ",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Localizacoes.Atualizar",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyaWtAZW1haWwuY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFETUlOSVNUUkFET1IiLCJwZXJtaXNzYW8iOiJBRE1JTklTVFJBRE9SIiwibm9tZSI6IkVyaWsiLCJleHAiOjE1NzY1MDc4NDAsImlzcyI6Ik9wRmxpeC5XZWJBcGkiLCJhdWQiOiJPcEZsaXguV2ViQXBpIn0.ZBjvThs1VxZ490o7jgYgqdX3K9vqxH2F56E7MG0Pw0I",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"latitude\" : \"-23.5524707\",\r\n\t\"longitude\" : \"-46.4073603\",\r\n\t\"lancamento\" : {\r\n\t\t\"titulo\" : \"Lorem Ipsum 3\",\r\n\t\t\"dataLancamento\" : \"2019-09-15\",\r\n\t}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://192.168.4.16:5000/api/localizacoes/Lorem Ipsum 3 /",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"4",
+										"16"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"localizacoes",
+										"Lorem Ipsum 3 ",
+										""
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"protocolProfileBehavior": {},
